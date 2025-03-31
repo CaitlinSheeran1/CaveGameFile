@@ -49,14 +49,12 @@ public class Movement : MonoBehaviour
     void UpdateMouse()
     {
         Vector2 targetMouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-
         currentMouseDelta = Vector2.SmoothDamp(currentMouseDelta, targetMouseDelta, ref currentMouseDeltaVelocity, mouseSmoothTime);
 
         cameraCap -= currentMouseDelta.y * mouseSensitivity;
-
         cameraCap = Mathf.Clamp(cameraCap, -90.0f, 90.0f);
-
-        playerCamera.localEulerAngles = Vector3.right * cameraCap;
+        Quaternion targetRotation = Quaternion.Euler(cameraCap, 0, 0);
+        playerCamera.localRotation = targetRotation;
 
         transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity);
     }
