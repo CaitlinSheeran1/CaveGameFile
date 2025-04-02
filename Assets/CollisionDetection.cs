@@ -6,8 +6,9 @@ public class CollisionDetection : MonoBehaviour
 {
     public WeaponController wc;
     public GameObject HitParticle;
-    private Dictionary<GameObject, int> enemyHealth = new Dictionary<GameObject, int>(); 
-    public int maxHealth = 3; 
+    private Dictionary<GameObject, int> enemyHealth = new Dictionary<GameObject, int>();
+    public int maxHealth = 3;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,7 +19,9 @@ public class CollisionDetection : MonoBehaviour
                 enemyHealth[other.gameObject] = maxHealth;
             }
 
-            enemyHealth[other.gameObject]--; 
+
+
+            enemyHealth[other.gameObject]--;
 
             Animator enemyAnim = other.GetComponent<Animator>();
 
@@ -26,8 +29,8 @@ public class CollisionDetection : MonoBehaviour
             {
                 if (enemyHealth[other.gameObject] <= 0)
                 {
-                    enemyAnim.SetTrigger("Die"); 
-                    StartCoroutine(DestroyEnemy(other.gameObject, 0.2f)); 
+                    enemyAnim.SetTrigger("Die");
+                    StartCoroutine(DestroyEnemy(other.gameObject, 0.2f));
                 }
                 else
                 {
@@ -38,12 +41,12 @@ public class CollisionDetection : MonoBehaviour
         }
     }
 
-    
+
     IEnumerator ResetToWalk(Animator anim)
     {
         yield return new WaitForSeconds(0.3f);
         anim.ResetTrigger("Hit");
-        anim.SetBool("isWalking", true); 
+        anim.SetBool("isWalking", true);
     }
 
     IEnumerator DestroyEnemy(GameObject enemy, float delay)
