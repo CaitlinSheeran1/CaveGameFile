@@ -8,24 +8,26 @@ public class HealthManager : MonoBehaviour
     public int currentHealth;
 
     public HealthBar healthBar;
+
     private void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            TakeDamage(20);
-        }
+        healthBar.SetMaxHealth(maxHealth);  
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar.SetCurrentHealth(currentHealth);  
 
-        healthBar.SetCurrentHealth(currentHealth);
+        if (currentHealth <= 0)
+        {
+            Die();  
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("Player died!");
     }
 }
