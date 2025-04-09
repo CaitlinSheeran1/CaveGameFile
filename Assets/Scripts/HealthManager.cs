@@ -12,17 +12,17 @@ public class HealthManager : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);  
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        healthBar.SetCurrentHealth(currentHealth);  
+        healthBar.SetCurrentHealth(currentHealth);
 
         if (currentHealth <= 0)
         {
-            Die();  
+            Die();
         }
     }
 
@@ -31,3 +31,7 @@ public class HealthManager : MonoBehaviour
         Debug.Log("Player died!");
     }
 }
+
+
+
+
