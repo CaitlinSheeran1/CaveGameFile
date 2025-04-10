@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public int maxHealth = 200;
     public int currentHealth;
 
     public HealthBar healthBar;
@@ -15,6 +15,17 @@ public class HealthManager : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
+    private void Update() // For testing
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            TakeDamage(10);
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TakeDamage(30);
+        }
+    }
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;

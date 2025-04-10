@@ -31,7 +31,7 @@ public class KillCounter : MonoBehaviour
     {
         if (killText != null)
         {
-            killText.text = "Enemies Killed: " + killCounter + " / 8";
+            killText.text = ""+ killCounter + "";
         }
     }
 
