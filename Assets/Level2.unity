@@ -7792,6 +7792,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6722085885383957590, guid: 55d457f62bfde174ca8683c9693c1660, type: 3}
+      propertyPath: m_Intensity
+      value: 47.746483
+      objectReference: {fileID: 0}
+    - target: {fileID: -6722085885383957590, guid: 55d457f62bfde174ca8683c9693c1660, type: 3}
+      propertyPath: m_AreaSize.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6722085885383957590, guid: 55d457f62bfde174ca8683c9693c1660, type: 3}
+      propertyPath: m_AreaSize.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: 55d457f62bfde174ca8683c9693c1660, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4683669308469848369, guid: 55d457f62bfde174ca8683c9693c1660, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -7803,6 +7819,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 65702495048144492, guid: 55d457f62bfde174ca8683c9693c1660, type: 3}
+    - {fileID: -8700617353114198275, guid: 55d457f62bfde174ca8683c9693c1660, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -8391222552659086748, guid: 55d457f62bfde174ca8683c9693c1660, type: 3}
