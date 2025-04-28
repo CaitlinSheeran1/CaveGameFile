@@ -57,6 +57,13 @@ public class WeaponController : MonoBehaviour
             }
         }
     }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
+    //    {
+    //        GetComponent<EnemyScript>().TakeDamage(damageAmount);
+    //    }
+    //}
 
 
 }

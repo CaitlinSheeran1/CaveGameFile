@@ -15,6 +15,10 @@ public class IdleState : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        var rot = animator.transform.eulerAngles;
+        rot.x = 0;
+        animator.transform.eulerAngles = rot;
+
         timer += Time.deltaTime;
         if (timer > 5) animator.SetBool("isPatrolling", true);
 
