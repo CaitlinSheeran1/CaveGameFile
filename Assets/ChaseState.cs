@@ -8,6 +8,7 @@ public class ChaseState : StateMachineBehaviour
 {
     NavMeshAgent agent;
     Transform player;
+
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent = animator.GetComponent<NavMeshAgent>();

@@ -9,6 +9,7 @@ public class WeaponController : MonoBehaviour
     public float AttackCooldown = 1.0f;
     public AudioClip SwordAttackSound;
     public bool IsAttacking = false;
+    public int damageAmount = 20;
 
     void Update()
     {
@@ -27,7 +28,6 @@ public class WeaponController : MonoBehaviour
         CanAttack = false;
         Animator anim = GetComponent<Animator>();
         anim.SetTrigger("Attack");
-
         AudioSource ac = GetComponent<AudioSource>();
         ac.PlayOneShot(SwordAttackSound);
 
@@ -47,5 +47,17 @@ public class WeaponController : MonoBehaviour
         IsAttacking = false;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (IsAttacking)
+        {
+            if (other.tag == "Enemy" || other.tag == "Boss")
+            {
+                other.GetComponent<EnemyScript>().TakeDamage(damageAmount);
+            }
+        }
+    }
+
 
 }
+
