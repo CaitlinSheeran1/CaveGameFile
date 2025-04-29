@@ -21,6 +21,7 @@ public class AttackState : StateMachineBehaviour
 
         if (distance > 20) animator.SetBool("isAttacking", false);
 
+
         
     }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

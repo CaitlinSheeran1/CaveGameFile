@@ -41,6 +41,7 @@ public class HealthManager : MonoBehaviour
     {
         Debug.Log("Player died!");
     }
+
 }
 
 

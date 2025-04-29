@@ -5,24 +5,20 @@ using UnityEngine;
 public class CollisionDetection : MonoBehaviour
 {
     public WeaponController wc;
-    public GameObject HitParticle;
     public int damageAmount = 20;
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.tag == "Enemy" || other.tag == "Boss")
+        if (wc != null && wc.IsAttacking)
         {
-            other.GetComponent<EnemyScript>().TakeDamage(damageAmount);
+            if (other.tag == "Enemy" || other.tag == "Boss")
+            {
+                other.GetComponent<EnemyScript>().TakeDamage(damageAmount);
+            }
         }
     }
+}
 
     
 
-    //IEnumerator DestroyEnemy(GameObject enemy, float delay)
-    //{
-    //    KillCounter.Instance.AddKill(); // This is for the counter
-    //    yield return new WaitForSeconds(delay);
-    //    Destroy(enemy);
-    //}
-}
+ 

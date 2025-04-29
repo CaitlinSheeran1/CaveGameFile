@@ -26,8 +26,10 @@ public class WeaponController : MonoBehaviour
     {
         IsAttacking = true;
         CanAttack = false;
+
         Animator anim = GetComponent<Animator>();
         anim.SetTrigger("Attack");
+
         AudioSource ac = GetComponent<AudioSource>();
         ac.PlayOneShot(SwordAttackSound);
 
@@ -57,13 +59,6 @@ public class WeaponController : MonoBehaviour
             }
         }
     }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
-    //    {
-    //        GetComponent<EnemyScript>().TakeDamage(damageAmount);
-    //    }
-    //}
 
 
 }
