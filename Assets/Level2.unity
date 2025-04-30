@@ -1388,6 +1388,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 551549584}
     m_Modifications:
+    - target: {fileID: 5493169743178423087, guid: fa7576413fbf339459d948aa3d3ebbe5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7773036549297549286, guid: fa7576413fbf339459d948aa3d3ebbe5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -8807,8 +8811,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.03082617, y: 0.15849337, z: 0.035646237}
-  m_Center: {x: -0.0014414137, y: -0.06129427, z: 0.003280302}
+  m_Size: {x: 0.038903553, y: 0.16574003, z: 0.03737529}
+  m_Center: {x: 0.0025972822, y: -0.064917624, z: 0.0024157707}
 --- !u!54 &1886468127
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8835,7 +8839,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!4 &1888985132 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010352536618, guid: 5d10ae558efe6a64d96e5b4d02ec6792, type: 3}
@@ -9282,8 +9286,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7, y: 2.042175, z: 2.5103705}
-  m_Center: {x: -0.056780737, y: 0.868316, z: 1.2153697}
+  m_Size: {x: 0.7, y: 2.042175, z: 2.6205707}
+  m_Center: {x: -0.058466047, y: 0.86860305, z: 1.2705213}
 --- !u!95 &2088052674
 Animator:
   serializedVersion: 5
