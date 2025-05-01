@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
@@ -26,7 +27,15 @@ public class EnemyScript : MonoBehaviour
             ac.PlayOneShot(SkeletonSound);
             GetComponent<BoxCollider>().enabled = false;
             KillCounter.Instance.AddKill();
-            StartCoroutine(DestroyAfterDelay(8f));
+            if (CompareTag("Enemy"))
+            {
+                StartCoroutine(DestroyAfterDelay(8f));
+            }
+            else if (CompareTag("Boss"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            
         }
         else
         {

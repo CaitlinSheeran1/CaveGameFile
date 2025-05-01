@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CAve.unity
     guid: 086a12b8b96bcbe48b54fa16723186ae
+  - enabled: 1
+    path: Assets/Level2.unity
+    guid: 162d8c8588b128543b66f75dc2e4445f
   m_configObjects: {}
