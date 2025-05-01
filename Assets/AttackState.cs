@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class AttackState : StateMachineBehaviour
 {
+    EnemeyCollider colliderController; //ddddddddd
+
 
     Transform player;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        colliderController = animator.GetComponent<EnemeyCollider>(); //dddddddddd
+
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -26,7 +30,10 @@ public class AttackState : StateMachineBehaviour
     }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        if (colliderController != null)   ///ddddddd
+        {
+            colliderController.DisableCollider();
+        }
     }
 
 

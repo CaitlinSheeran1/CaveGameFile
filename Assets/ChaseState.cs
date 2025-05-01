@@ -7,17 +7,19 @@ public class ChaseState : StateMachineBehaviour
 {
     NavMeshAgent agent;
     Transform player;
+    EnemeyCollider colliderController;
 
-    private float attackCooldown = 1f; 
+    private float attackCooldown = 1f;
     private float attackTimer;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent = animator.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        agent.speed = 35.0f;
+        colliderController = animator.GetComponent<EnemeyCollider>();
 
-        attackTimer = 0f; 
+        agent.speed = 35.0f;
+        attackTimer = 0f;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -34,7 +36,7 @@ public class ChaseState : StateMachineBehaviour
         {
             animator.SetBool("isChasing", false);
         }
-        
+
         if (distance < 20)
         {
             attackTimer += Time.deltaTime;
@@ -42,16 +44,26 @@ public class ChaseState : StateMachineBehaviour
             if (attackTimer >= attackCooldown)
             {
                 animator.SetBool("isAttacking", true);
+
+                if (colliderController != null)
+                {
+                    colliderController.EnableColliderWithDelay(1.5f);
+                }
             }
         }
         else
         {
-            attackTimer = 0f; 
+            attackTimer = 0f;
         }
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent.SetDestination(animator.transform.position);
+
+        if (colliderController != null)
+        {
+            colliderController.DisableCollider();
+        }
     }
 }

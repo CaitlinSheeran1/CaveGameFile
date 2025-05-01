@@ -9,15 +9,13 @@ public class EnemyAttackScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             HealthManager playerHealth = other.GetComponent<HealthManager>();
             if (playerHealth != null)
             {
-                other.GetComponent<HealthManager>().TakeDamage(enemyAttackDamage);
+                playerHealth.TakeDamage(enemyAttackDamage);
             }
         }
-        
     }
 }
