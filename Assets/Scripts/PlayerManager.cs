@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static PlayerManager instance;  // Singleton instance
-    public GameObject player;             // Reference to the player object
+    public static PlayerManager instance;  
+    public GameObject player;           
 
     void Awake()
     {
-        // Ensure that only one instance of PlayerManager exists
         if (instance != null && instance != this)
         {
-            Destroy(gameObject);  // Destroy duplicate instances
+            Destroy(gameObject);
         }
         else
         {
-            instance = this;  // Set instance to the current object
-            DontDestroyOnLoad(gameObject);  // Optional: Persist between scenes
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
 }
